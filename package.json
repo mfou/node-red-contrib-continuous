@@ -2,15 +2,31 @@
   "name": "node-red-contrib-continuous",
   "version": "0.0.1",
   "description" : "Node-RED node to do a continuous integration flow",
-  "private": true,
   "dependencies": {
     "promise": "7.0.3",
     "rimraf":"2.5.2"
   },
+  "devDependencies": {},
+  "directories": {},
+  "keywords": [
+    "node-red",
+    "build",
+    "deploy",
+    "continuous",
+    "integration"
+  ],
+  "optionalDependencies": {},
+  "scripts": {},
+  "engines" : { 
+    "node" : ">=4.0.0" 
+  },
+  "author": "Marc Fouqué",
+  "license": "MIT",
+  "homepage": "https://github.com/mfou/node-red-contrib-continuous",
   "node-red" : {
-	"nodes": {
-	  "build": "build.js",
-	  "deploy": "deploy.js"
-	}
+    "nodes": {
+      "build": "build.js",
+      "deploy": "deploy.js"
+    }
   }
 }
