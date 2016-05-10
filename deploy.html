@@ -1,0 +1,61 @@
+
+<script type="text/x-red" data-template-name="deploy">
+    <div class="form-row">
+        <label for="node-input-deploydir"><i class="fa fa-tasks"></i> deploydir</label>
+        <input type="text" id="node-input-deploydir" placeholder="deploydir">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-projectname"><i class="fa fa-tasks"></i> projectname</label>
+        <input type="text" id="node-input-projectname" placeholder="Projectname">
+    </div>
+    <br/>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-branch"><i class="fa fa-tasks"></i> branch</label>
+        <input type="text" id="node-input-branch" placeholder="Branch">
+    </div>
+     <br/>
+    <div class="form-row">
+        <label for="node-input-giturl"><i class="fa fa-tasks"></i> giturl</label>
+        <input type="text" id="node-input-giturl" placeholder="Giturl">
+    </div>
+    <br/>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="deploy">
+   <p>Simple sample input node. Just sends a single message when it starts up.
+   This is not very useful.</p>
+   <p>Outputs an object called <code>msg</code> containing <code>msg.topic</code> and
+   <code>msg.payload</code>. msg.payload is a String.</p>
+</script>
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('deploy',{
+        category: 'continuous',      
+        color:"rgb(255, 99, 175)",
+        defaults: {             
+            name: {value:""},   
+            deploydir : {value:"C:/Users/INUFOUM/workspace/deploy"}, 
+            projectname : {value:"doxs"},
+            branch : {value:"map"},
+            giturl : {value:"ssh://git@ibgite01.srv-ib.ibp:443/itg/dox-services.git"}
+        },
+        inputs:1,               
+        outputs:1,              
+        icon: "deploy.png",    
+        label: function() {     
+            return this.name||this.topic||"deploy";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
